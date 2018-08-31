@@ -1,8 +1,11 @@
 package com.fxcontrollers;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.Alert;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 
 public class TeamGeneratorController {

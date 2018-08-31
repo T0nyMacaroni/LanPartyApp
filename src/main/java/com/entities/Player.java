@@ -4,7 +4,10 @@ import java.io.Serializable;
 import java.util.List;
 
 public class Player implements Serializable {
-    private String name;
+	
+	private static final long serialVersionUID = 8658534901414231502L;
+	
+	private String name;
     private String psnId;
 
     private List<String> games;
@@ -29,4 +32,12 @@ public class Player implements Serializable {
     public void setPsnId(String psnId){
         this.psnId = psnId;
     }
+
+	public List<String> getGames() {
+		return games;
+	}
+
+	public void setGames(List<String> games) {
+		this.games = games;
+	}
 }
