@@ -7,9 +7,12 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 public class TeamGeneratorController {
 
+	public static Stage parentStage;
+	
     @FXML private TextField txtfield_number_of_players;
     @FXML private TextField txtfield_number_of_teams;
 
@@ -74,11 +77,14 @@ public class TeamGeneratorController {
     public void aboutMenu_action(){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("About");
-        alert.setHeaderText(null);
+        alert.setHeaderText("");
         alert.setContentText("Created by: Anthony Stulens & Ben Teppers");
         //alert.setGraphic(new ImageView(getClass().getResource("/resources/icons/image.png").toString()));
-
-        alert.showAndWait();
+        
+        alert.show();
+    
+        alert.setX(parentStage.getX() + (parentStage.getWidth()/2 - alert.getWidth()/2));
+        alert.setY(parentStage.getY() + (parentStage.getHeight()/2 - alert.getHeight()/2));
     }
 
 }

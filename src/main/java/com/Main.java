@@ -1,5 +1,7 @@
 package com;
 
+import com.fxcontrollers.TeamGeneratorController;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,6 +16,7 @@ public class Main extends Application {
         primaryStage.setTitle("Lan Party App");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
+        TeamGeneratorController.parentStage = primaryStage;
     }
 
     public static void main(String[] args) {
