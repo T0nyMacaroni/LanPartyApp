@@ -1,4 +1,4 @@
-package main.java.com;
+package com;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -10,9 +10,13 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/main/resources/fxmls/TeamGenerator.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxmls/TeamGenerator.fxml"));
         primaryStage.setTitle("Lan Party App");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
     }
 }

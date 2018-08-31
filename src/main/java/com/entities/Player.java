@@ -1,10 +1,13 @@
-package main.java.com.entities;
+package com.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Player implements Serializable {
     private String name;
     private String psnId;
+
+    private List<String> games;
 
     public Player(String name, String psnId){
         this.name = name;

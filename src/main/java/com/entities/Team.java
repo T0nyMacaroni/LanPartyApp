@@ -1,6 +1,6 @@
-package main.java.com.entities;
+package com.entities;
 
-import main.java.com.entities.Player;
+import com.entities.Player;
 
 import java.util.ArrayList;
 import java.util.List;
