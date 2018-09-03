@@ -5,8 +5,67 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.control.ListView?>
 
-<BorderPane stylesheets="/stylesheets/TeamGeneratorNode.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fxcontrollers.PlayersController">
-    <top><Label text="Comming Soon!"/></top>
-
+<BorderPane stylesheets="/stylesheets/PlayersNode.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fxcontrollers.PlayersController">
+    <center>
+    	<BorderPane>
+    		<top>
+    			<FlowPane styleClass="centerElements">
+    				<Label>Player Details:</Label>
+    			</FlowPane>
+    		</top>
+    		
+    		<center>
+    			<FlowPane styleClass="centerElements">
+    				<GridPane hgap="5" vgap="5">
+	    				<Label text="Name"
+	    					GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+	    				<TextField fx:id="txt_playerName"
+	    					GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+	    					
+	    				<Label text="Surname"
+	    					GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+	    				<TextField fx:id="txt_playerSurName"
+	    					GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+	    					
+	    				<Label text="PSN-ID"
+	    					GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+	    				<TextField fx:id="txt_playerPSNId"
+	    					GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+	    					
+	    				<Label text="Games"
+	    					GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+	    				<ComboBox fx:id="cmb_possibleGames"
+	    					GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    				</GridPane>
+    			</FlowPane>
+    		</center>
+    		
+    		<bottom>
+    			<FlowPane styleClass="centerElements">
+	    			<Button>Add Player</Button>
+	    			<Button>Modify Player</Button>
+    			</FlowPane>
+    		</bottom>
+    	</BorderPane>
+    </center>
+    
+    <right>
+    	<BorderPane styleClass="playersList">
+    		<top>
+    			<FlowPane styleClass="centerElements">
+    				<Label>Players</Label>
+    			</FlowPane>
+    		</top>
+    		
+    		<center>
+    			<ListView fx:id="lview_allPlayers"/>
+    		</center>
+    	</BorderPane>
+    </right>
 </BorderPane>
