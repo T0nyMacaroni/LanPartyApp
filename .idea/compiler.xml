@@ -20,7 +20,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="LanPartyApp" target="7" />
+      <module name="LanPartyApp" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

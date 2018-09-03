@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.fxcontrollers.MainFrameController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <top>
+        <!-- MENU BAR -->
+        <MenuBar BorderPane.alignment="TOP_CENTER" >
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="New" accelerator="Ctrl+N" onAction="#newMenu_action"/>
+                        <MenuItem mnemonicParsing="false" text="Open" accelerator="Ctrl+O" onAction="#openMenu_action"/>
+                        <MenuItem mnemonicParsing="false" text="Save" accelerator="Ctrl+S" onAction="#saveMenu_action"/>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Exit" accelerator="Ctrl+E" onAction="#exitMenu_action" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About" accelerator="F12" onAction="#aboutMenu_action"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+
+    <center>
+        <TabPane>
+            <tabs>
+                <!-- Generator Tab -->
+                <Tab closable="false" text="Generator" >
+                    <fx:include source="/fxmls/TeamGenerator.fxml"/>
+                </Tab>
+                <!-- Players Tab -->
+                <Tab closable="false" text="Players">
+                    <fx:include source="/fxmls/PlayersNode.fxml"/>
+                </Tab>
+
+                <!-- Teams Tab -->
+                <Tab closable="false" text="Teams">
+                    <Label text="Comming Soon!"/>
+                </Tab>
+
+                <!-- Competition Tab -->
+                <Tab closable="false" text="Competition">
+                    <Label text="Comming Soon!"/>
+                </Tab>
+
+                <!-- Tournament Tab -->
+                <Tab closable="false" text="Tournament">
+                    <Label text="Comming Soon!"/>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+</BorderPane>

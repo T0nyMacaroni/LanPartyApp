@@ -1,6 +1,7 @@
 package com.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Player implements Serializable {
@@ -8,17 +9,28 @@ public class Player implements Serializable {
 	private static final long serialVersionUID = 8658534901414231502L;
 	
 	private String name;
+	private String firstName;
     private String psnId;
 
     private List<String> games;
 
-    public Player(String name, String psnId){
+    public Player(String name,String firstName, String psnId){
         this.name = name;
+        this.firstName = firstName;
         this.psnId = psnId;
+        games = new ArrayList<>();
     }
 
     public String getName(){
         return name;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getPsnId(){
@@ -37,7 +49,9 @@ public class Player implements Serializable {
 		return games;
 	}
 
-	public void setGames(List<String> games) {
-		this.games = games;
+	public void addGame(String game) {
+		games.add(game);
 	}
+
+
 }

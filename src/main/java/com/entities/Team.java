@@ -7,14 +7,21 @@ import java.util.List;
 
 public class Team {
     private String teamName;
-    private List<Player> players = new ArrayList<>();
+    private List<Player> players;
+    private int teamSize;
 
-    public Team(String teamName){
+    public Team(int teamSize){
         this.setTeamName(teamName);
+        this.teamSize = teamSize;
+        players = new ArrayList<>(teamSize);
     }
 
     public void addPlayer(Player player){
         players.add(player);
+    }
+
+    public List<Player> getPlayers(){
+        return players;
     }
 
 	public String getTeamName() {
