@@ -36,5 +36,4 @@ public class MainFrameController {
         //alert.setGraphic(new ImageView(getClass().getResource("/resources/icons/image.png").toString()));
         alert.showBox();
     }
-
 }

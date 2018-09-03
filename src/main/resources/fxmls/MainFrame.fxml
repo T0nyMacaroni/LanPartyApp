@@ -38,7 +38,7 @@
             <tabs>
                 <!-- Generator Tab -->
                 <Tab closable="false" text="Generator" >
-                    <fx:include source="/fxmls/TeamGenerator.fxml"/>
+                    <fx:include source="/fxmls/TeamGeneratorNode.fxml"/>
                 </Tab>
                 <!-- Players Tab -->
                 <Tab closable="false" text="Players">
