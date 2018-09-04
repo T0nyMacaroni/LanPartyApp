@@ -5,10 +5,10 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane stylesheets="/stylesheets/TeamGeneratorNode.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fxcontrollers.TeamGeneratorController">
+<BorderPane stylesheets="/stylesheets/TeamGeneratorNode.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fxcontrollers.TeamGeneratorController" styleClass="outside">
 
     <top>
-        <VBox>
+        <VBox styleClass="VBox">
             <BorderPane>
                 <left><Label>Number of Players:</Label></left>
                 <center><FlowPane alignment="CENTER"><TextField fx:id="txtfield_number_of_players"> </TextField></FlowPane></center>
@@ -18,7 +18,7 @@
             <BorderPane>
                 <left><Label>Number of Teams:</Label></left>
                 <center><FlowPane alignment="CENTER"><TextField fx:id="txtfield_number_of_teams"></TextField></FlowPane></center>
-                <right></right>
+                <right><Button visible="false">Vies dikke </Button></right>
             </BorderPane>
 
             <BorderPane>
@@ -45,7 +45,7 @@
     </top>
 
     <center>
-        <TextArea fx:id="txtarea_team_result" editable="false"></TextArea>
+        <BorderPane styleClass="textfield"><center><TextArea fx:id="txtarea_team_result" editable="false"></TextArea></center></BorderPane>
     </center>
 
     <bottom>

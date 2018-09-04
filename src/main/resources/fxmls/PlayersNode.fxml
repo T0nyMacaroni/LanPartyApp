@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.control.ListView?>
 
-<BorderPane stylesheets="/stylesheets/PlayersNode.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fxcontrollers.PlayersController">
+<BorderPane stylesheets="/stylesheets/PlayersNode.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fxcontrollers.PlayersController" styleClass="outside">
     <center>
     	<BorderPane>
     		<top>
@@ -52,7 +52,7 @@
     	<BorderPane styleClass="playersList">
     		<top>
     			<FlowPane styleClass="centerElements">
-    				<Label>Players</Label>
+    				<Label styleClass="label">Players</Label>
     			</FlowPane>
     		</top>
     		

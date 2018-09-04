@@ -28,6 +28,15 @@ public class MainFrameController {
     }
 
     @FXML
+    public void exportPlayersMenu_action(){
+
+    }
+    @FXML
+    public void importPlayersMenu_action(){
+
+    }
+
+    @FXML
     public void aboutMenu_action(){
         Popup alert = new Popup(Alert.AlertType.INFORMATION);
         alert.setTitle("About");

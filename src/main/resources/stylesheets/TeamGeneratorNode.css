@@ -1,12 +1,13 @@
-.HBox {
-    -fx-padding: 5px;
-    -fx-spacing: 5px;
-    -fx-border-insets: 5px;
-    -fx-background-insets: 5px;
+VBox {
+    -fx-spacing: 5;
 }
 
-.buitenkant{
-    -fx-padding: 10;
+.outside{
+    -fx-padding: 10px;
+}
+
+.textfield{
+    -fx-padding: 5 0;
 }
 
 

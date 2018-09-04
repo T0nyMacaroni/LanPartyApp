@@ -21,6 +21,9 @@
                         <MenuItem mnemonicParsing="false" text="Open" accelerator="Ctrl+O" onAction="#openMenu_action"/>
                         <MenuItem mnemonicParsing="false" text="Save" accelerator="Ctrl+S" onAction="#saveMenu_action"/>
                         <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Export Players..." onAction="#exportPlayersMenu_action"/>
+                        <MenuItem mnemonicParsing="false" text="Import Players..." onAction="#importPlayersMenu_action"/>
+                        <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem mnemonicParsing="false" text="Exit" accelerator="Ctrl+E" onAction="#exitMenu_action" />
                     </items>
                 </Menu>

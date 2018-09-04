@@ -4,6 +4,8 @@
 
 .playersList {
 	-fx-max-width: 320;
+	-fx-padding: 0 0 5 5;
+	-fx-spacing: 5;
 }
 
 #lview_allPlayers {
@@ -14,3 +16,12 @@
 .create_player_button {
 	-fx-min-width: 100%;
 }
+
+.outside{
+	-fx-padding: 10;
+}
+
+.label{
+	-fx-padding: 0 0 5 0;
+}
+
