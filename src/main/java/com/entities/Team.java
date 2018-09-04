@@ -12,7 +12,7 @@ public class Team {
 
     public Team(int teamSize){
         this.setTeamName(teamName);
-        this.teamSize = teamSize;
+        this.setTeamSize(teamSize);
         players = new ArrayList<>(teamSize);
     }
 
@@ -30,5 +30,13 @@ public class Team {
 
 	public void setTeamName(String teamName) {
 		this.teamName = teamName;
+	}
+
+	public int getTeamSize() {
+		return teamSize;
+	}
+
+	public void setTeamSize(int teamSize) {
+		this.teamSize = teamSize;
 	}
 }
