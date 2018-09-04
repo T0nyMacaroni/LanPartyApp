@@ -16,8 +16,6 @@ public class PlayersController {
 	@FXML private ListView<Player> lview_allPlayers;
 	
 	private Player player;
-	private PlayerRepository player_repo;
-	private GamesRepository games_repo;
 	
 	private int previousSelectedPlayerIndex;
 	
@@ -38,9 +36,9 @@ public class PlayersController {
 				txt_playerFirstname.getText(),
 				txt_playerPSNId.getText()
 		);
-		player_repo.modify(oldPlayer, player);
+		PlayerRepository.modify(oldPlayer, player);
 		lview_allPlayers.getItems().clear();
-		lview_allPlayers.getItems().addAll(player_repo.getAll());
+		lview_allPlayers.getItems().addAll(PlayerRepository.getAll());
 		lview_allPlayers.getSelectionModel().select(previousSelectedPlayerIndex);
 	}
 	
@@ -59,15 +57,13 @@ public class PlayersController {
 	private void listing_demo() {
 		System.out.println("Demo sequence initiated!");
 				
-		player_repo = new PlayerRepository();
-		player_repo.add(new Player("Anthony", "Stulens", "AnthonioFéro"));
-		player_repo.add(new Player("Ben", "Teppers", "BennyOClock"));
+		PlayerRepository.add(new Player("Anthony", "Stulens", "AnthonioFéro"));
+		PlayerRepository.add(new Player("Ben", "Teppers", "BennyOClock"));
 		
-		lview_allPlayers.getItems().addAll(player_repo.getAll());
+		lview_allPlayers.getItems().addAll(PlayerRepository.getAll());
 		
-		games_repo = new GamesRepository();
-		games_repo.add(new Game("GTA V"));
-		games_repo.add(new Game("Rainbow Six Siege"));
+		GamesRepository.add(new Game("GTA V"));
+		GamesRepository.add(new Game("Rainbow Six Siege"));
 		
 		//TODO build games selection list
 	}
