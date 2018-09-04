@@ -1,12 +1,13 @@
 package com.uicomponents;
 
-import com.fxcontrollers.TeamGeneratorController;
+import com.Settings;
+
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
 public class Popup extends Alert {
 
-    private Stage parentStage = TeamGeneratorController.parentStage;
+    private Stage parentStage = Settings.primaryStage;
 
     public Popup(AlertType type) {
         super(type);

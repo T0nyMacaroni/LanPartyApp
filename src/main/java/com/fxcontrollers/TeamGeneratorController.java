@@ -13,11 +13,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
 
 public class TeamGeneratorController {
-
-	public static Stage parentStage;
 	
     @FXML private TextField txtfield_number_of_players;
 

@@ -1,6 +1,5 @@
 package com;
 
-import com.fxcontrollers.TeamGeneratorController;
 import com.io.Writer;
 
 import javafx.application.Application;
@@ -17,7 +16,7 @@ public class Main extends Application {
         primaryStage.setTitle("Lan Party App");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
-        TeamGeneratorController.parentStage = primaryStage;
+        Settings.primaryStage = primaryStage;
         
         primaryStage.setOnHidden(e -> {
         	System.out.println("Closing..");
