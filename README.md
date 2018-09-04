@@ -9,10 +9,15 @@ Application for managing Lan parties for Playstation 4
 	- Undo/Redo Option
 	- I/O Handler (Export/Import players)
 	- Documentation
-	- Textbox Outlining (TeamGeneratorNode)
 	- Create Test-cases for as many objects possible
 	- ...
 
 ## Bugs
 	- Creating a player within the PlayersFrame shouldn't overwrite an existing player.
+	- ...
+
+## Finished
+	- Textbox Outlining (TeamGeneratorNode)
+	
+## Fixed
 	- ...

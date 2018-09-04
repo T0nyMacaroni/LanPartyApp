@@ -4,23 +4,29 @@
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
 
 <BorderPane stylesheets="/stylesheets/TeamGeneratorNode.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fxcontrollers.TeamGeneratorController" styleClass="outside">
 
     <top>
         <VBox styleClass="VBox">
-            <BorderPane>
-                <left><Label>Number of Players:</Label></left>
-                <center><FlowPane alignment="CENTER"><TextField fx:id="txtfield_number_of_players"> </TextField></FlowPane></center>
-                <right><Button onAction="#button_selectPlayers_action">Configure Players</Button></right>
-            </BorderPane>
-
-            <BorderPane>
-                <left><Label>Number of Teams:</Label></left>
-                <center><FlowPane alignment="CENTER"><TextField fx:id="txtfield_number_of_teams"></TextField></FlowPane></center>
-                <right><Button visible="false">Vies dikke </Button></right>
-            </BorderPane>
-
+        	<GridPane maxWidth="Infinity" vgap="5">
+        		<!-- Top layer -->
+        		<Label text="Number of Players:"
+        			GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.hgrow="always"/>
+                <TextField fx:id="txtfield_number_of_players"
+                	GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.hgrow="always"/>
+                <Button text="Configure" onAction="#button_selectPlayers_action"
+                	GridPane.columnIndex="2" GridPane.rowIndex="0" GridPane.hgrow="always" GridPane.halignment="RIGHT"/>
+                	
+                <!-- Center layer -->
+                <Label text="Number of Teams:"
+                	GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.hgrow="always"/>
+                <TextField fx:id="txtfield_number_of_teams"
+                	GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.hgrow="always"/>
+                <Label text="NULL" visible="false"
+                	GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.hgrow="always"/>
+        	</GridPane>
             <BorderPane>
                 <left>
                     <CheckBox fx:id="checkbox_divisions" text="Divisions?" onAction="#checkbox_divisions_changed"/>
