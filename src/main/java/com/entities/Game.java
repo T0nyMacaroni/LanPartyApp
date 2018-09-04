@@ -1,7 +1,11 @@
 package com.entities;
 
-public class Game {
+import java.io.Serializable;
 
+public class Game implements Serializable {
+
+	private static final long serialVersionUID = -2072940140941450041L;
+	
 	private String name;
 
 	public Game() {

@@ -1,6 +1,7 @@
 package com;
 
 import com.fxcontrollers.TeamGeneratorController;
+import com.io.Writer;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -17,9 +18,15 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
         TeamGeneratorController.parentStage = primaryStage;
+        
+        primaryStage.setOnHidden(e -> {
+        	System.out.println("Closing..");
+        	Writer.processData();
+        });
     }
 
     public static void main(String[] args) {
+    	Initializer.init();
         launch(args);
     }
 }

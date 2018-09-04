@@ -33,5 +33,11 @@ public class GamesRepository implements Serializable {
 	public static List<Game> getAll() {
 		return list.values().stream().collect(Collectors.toList());
 	}
+
+	public static void createMap(List<Game> repo_games) {
+		repo_games.forEach(e -> {
+			add(e);
+		});
+	}
 	
 }

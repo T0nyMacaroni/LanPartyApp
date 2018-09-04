@@ -1,6 +1,7 @@
 package com.fxcontrollers;
 
 import com.uicomponents.Popup;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 
@@ -29,11 +30,13 @@ public class MainFrameController {
 
     @FXML
     public void exportPlayersMenu_action(){
-
+    	//TODO Writer.export_player_repository(ABSOLUTE_PATH);
     }
+    
     @FXML
     public void importPlayersMenu_action(){
-
+    	//TODO Reader.import_player_repository(ABSOLUTE_PATH);
+    	//TODO Refresh tables
     }
 
     @FXML

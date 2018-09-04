@@ -34,4 +34,10 @@ public class PlayerRepository implements Serializable {
 	public static List<Player> getAll() {
 		return list.values().stream().collect(Collectors.toList());
 	}
+
+	public static void createMap(List<Player> repo_player) {
+		repo_player.forEach(e -> {
+			add(e);
+		});
+	}
 }

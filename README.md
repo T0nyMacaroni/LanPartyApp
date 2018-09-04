@@ -7,8 +7,6 @@ Application for managing Lan parties for Playstation 4
 	- !! Add Listview Headers (Firstname, Name, PSN-ID)
 	- !! Listview sorting logic
 	- ! Undo/Redo Option
-	- !!!! I/O Handler (Export/Import players)
-	- !!!! Documentation
 	- !!!! Create Test-cases for as many objects possible
 	- ...
 
@@ -16,8 +14,12 @@ Application for managing Lan parties for Playstation 4
 	- !!!! Creating a player within the PlayersFrame shouldn't overwrite an existing player.
 	- ...
 
+## In progress
+	- !!!! Documentation
+
 ## Finished
 	- Textbox Outlining (TeamGeneratorNode)
+	- !!!! I/O Handler (Export/Import players)
 	
 ## Fixed
 	- ...
