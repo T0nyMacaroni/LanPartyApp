@@ -1,5 +1,6 @@
 package com.repositories;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -7,8 +8,10 @@ import java.util.stream.Collectors;
 
 import com.entities.Player;
 
-public class PlayerRepository {
+public class PlayerRepository implements Serializable {
 
+	private static final long serialVersionUID = 5986949393186564338L;
+	
 	private static Map<String, Player> list = new HashMap<>();
 	
 	public static void add(Player player) {
@@ -24,7 +27,7 @@ public class PlayerRepository {
 	}
 	
 	public static void modify(Player oldPlayer,Player newPlayer) {
-		list.remove(oldPlayer);
+		remove(oldPlayer);
 		list.put(newPlayer.getPsnId(), newPlayer);
 	}
 	
