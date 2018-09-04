@@ -5,9 +5,6 @@ Application for managing Lan parties for Playstation 4
 	- !!! PSN-ID can't contain spaces (Player, PlayerController, PlayerNode)
 	- !!! Add Games property (Player, PlayerController, PlayerNode)
 	- ! Undo/Redo Option
-	- !!!! Create Test-cases for as many objects possible
-	- !!!! I/O Handler (Export/Import players)
-	- !!!! Documentation
 	- !!!! Create Test-cases for as many objects as possible
 	- !!! PSN-ID can't contain spaces (Player, PlayerController, PlayerNode)
 	- !!! Add Games property (Player, PlayerController, PlayerNode)
