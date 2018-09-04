@@ -10,6 +10,7 @@ Application for managing Lan parties for Playstation 4
 	- I/O Handler (Export/Import players)
 	- Documentation
 	- Textbox Outlining (TeamGeneratorNode)
+	- Create Test-cases for as many objects possible
 	- ...
 
 ## Bugs
