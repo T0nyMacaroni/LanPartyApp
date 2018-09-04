@@ -1,7 +1,9 @@
 package com.repositories;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import com.entities.Game;
 
@@ -20,13 +22,13 @@ public class GamesRepository {
 	public static Game get(String gameName) {
 		return list.get(gameName);
 	}
-
-	public static Map<String, Game> getAll() {
-		return list;
-	}
-
+	
 	public static void modify(String gameName, Game game) {
 		list.put(gameName, game);
+	}
+	
+	public static List<Game> getAll() {
+		return list.values().stream().collect(Collectors.toList());
 	}
 	
 }

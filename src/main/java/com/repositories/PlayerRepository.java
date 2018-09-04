@@ -1,7 +1,9 @@
 package com.repositories;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import com.entities.Player;
 
@@ -20,12 +22,12 @@ public class PlayerRepository {
 	public static Player get(String psnId) {
 		return list.get(psnId);
 	}
-
-	public static Map<String, Player> getAll() {
-		return list;
-	}
-
+	
 	public static void modify(String psnId, Player player) {
 		list.put(psnId, player);
+	}
+	
+	public static List<Player> getAll() {
+		return list.values().stream().collect(Collectors.toList());
 	}
 }
