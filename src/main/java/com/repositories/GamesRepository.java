@@ -10,7 +10,8 @@ public class GamesRepository {
 	private static List<Game> list = new ArrayList<>();
 	
 	public static void add(Game t) {
-		list.add(t);
+		if (!list.contains(t))
+			list.add(t);
 	}
 	
 	public static void remove(int index) {
@@ -18,7 +19,8 @@ public class GamesRepository {
 	}
 
 	public static void remove(Game t) {
-		list.remove(t);
+		if (!list.contains(t))
+			list.remove(t);
 	}
 
 	public static void get(int index) {

@@ -10,11 +10,13 @@ public class PlayerRepository {
 	private static List<Player> list = new ArrayList<>();
 	
 	public static void add(Player t) {
-		list.add(t);
+		if (!list.contains(t))
+			list.add(t);
 	}
 
 	public static void remove(Player t) {
-		list.remove(t);
+		if (!list.contains(t))
+			list.remove(t);
 	}
 	
 	public static void remove(int index) {
