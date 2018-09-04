@@ -5,17 +5,30 @@ import com.entities.Player;
 import com.repositories.GamesRepository;
 import com.repositories.PlayerRepository;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.util.Observable;
 
 public class PlayersController {
 	@FXML private TextField txt_playerName;
 	@FXML private TextField txt_playerFirstname;
 	@FXML private TextField txt_playerPSNId;
-	@FXML private ListView<Player> lview_allPlayers;
+	//@FXML private ListView<Player> lview_allPlayers;
+	@FXML private TableView<Player> tv_allPlayers;
+	@FXML private TableColumn<Player,String> tv_firstnameCol;
+	@FXML private TableColumn<Player,String> tv_nameCol;
+	@FXML private TableColumn<Player,String> tv_psnIdCol;
 	
 	private Player player;
+
+	private ObservableList<Player> data = FXCollections.observableArrayList(PlayerRepository.getAll());
 	
 	private int previousSelectedPlayerIndex;
 	
@@ -32,8 +45,9 @@ public class PlayersController {
 				txt_playerPSNId.getText()
 		);
 		PlayerRepository.add(newPlayer);
-		lview_allPlayers.getItems().clear();
-		lview_allPlayers.getItems().addAll(PlayerRepository.getAll());
+		tv_allPlayers.getItems().clear();
+		tv_allPlayers.getItems().addAll(PlayerRepository.getAll());
+
 	}
 	
 	@FXML private void modify_player() {
@@ -44,31 +58,36 @@ public class PlayersController {
 				txt_playerFirstname.getText(),
 				txt_playerPSNId.getText()
 		);
-		PlayerRepository.remove(oldPlayer);
-		PlayerRepository.modify(player);
-		lview_allPlayers.getItems().clear();
-		lview_allPlayers.getItems().addAll(PlayerRepository.getAll());
-		lview_allPlayers.getSelectionModel().select(previousSelectedPlayerIndex);
+		PlayerRepository.modify(oldPlayer, player);
+		tv_allPlayers.getItems().clear();
+		tv_allPlayers.getItems().addAll(PlayerRepository.getAll());
+		//lview_allPlayers.getSelectionModel().select(previousSelectedPlayerIndex);
 	}
 	
 	@FXML private void remove_player() {
 		System.out.println("Remove player...");
 		if (player == null) return;
 		PlayerRepository.remove(player);
-		lview_allPlayers.getItems().clear();
-		lview_allPlayers.getItems().addAll(PlayerRepository.getAll());
+		tv_allPlayers.getItems().clear();
+		tv_allPlayers.getItems().addAll(PlayerRepository.getAll());
 	}
 	
 	private void initPlayerListListener() {
-		lview_allPlayers.getSelectionModel().selectedItemProperty().addListener(e -> {
-			player = lview_allPlayers.getSelectionModel().getSelectedItem();
+		tv_allPlayers.getSelectionModel().selectedItemProperty().addListener(e -> {
+			player = tv_allPlayers.getSelectionModel().getSelectedItem();
 			if (player == null) return;
-			previousSelectedPlayerIndex = lview_allPlayers.getSelectionModel().getSelectedIndex();
-			txt_playerName.setText(player.getName());
+			previousSelectedPlayerIndex = tv_allPlayers.getSelectionModel().getSelectedIndex();
 			txt_playerFirstname.setText(player.getFirstName());
+			txt_playerName.setText(player.getName());
 			txt_playerPSNId.setText(player.getPsnId());
+
 			//TODO turn games list into frame list.
 		});
+
+		tv_firstnameCol.setCellValueFactory(new PropertyValueFactory<Player,String>("firstName"));
+		tv_nameCol.setCellValueFactory(new PropertyValueFactory<Player,String>("name"));
+		tv_psnIdCol.setCellValueFactory(new PropertyValueFactory<Player,String>("psnId"));
+		//tv_allPlayers.setItems(data);
 	}
 	
 	private void listing_demo() {
@@ -77,7 +96,7 @@ public class PlayersController {
 		PlayerRepository.add(new Player("Anthony", "Stulens", "AnthonioFéro"));
 		PlayerRepository.add(new Player("Ben", "Teppers", "BennyOClock"));
 		
-		lview_allPlayers.getItems().addAll(PlayerRepository.getAll());
+		//lview_allPlayers.getItems().addAll(PlayerRepository.getAll());
 		
 		GamesRepository.add(new Game("GTA V"));
 		GamesRepository.add(new Game("Rainbow Six Siege"));

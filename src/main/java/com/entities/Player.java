@@ -28,16 +28,16 @@ public class Player implements Serializable {
     }
 
     private StringProperty name;
-    public void setName(String value) { firstNameProperty().set(value); }
-    public String getName() { return firstNameProperty().get(); }
+    public void setName(String value) { nameProperty().set(value); }
+    public String getName() { return nameProperty().get(); }
     public StringProperty nameProperty() {
         return name;
     }
 
     private StringProperty psnId;
-    public void setPsnId(String value) { firstNameProperty().set(value); }
-    public String getPsnId() { return firstNameProperty().get(); }
-    public StringProperty PsnIdProperty() {
+    public void setPsnId(String value) { psnIdProperty().set(value); }
+    public String getPsnId() { return psnIdProperty().get(); }
+    public StringProperty psnIdProperty() {
         return psnId;
     }
 

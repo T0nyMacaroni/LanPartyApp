@@ -11,20 +11,21 @@ public class PlayerRepository {
 
 	private static Map<String, Player> list = new HashMap<>();
 	
-	public static void add(Player t) {
-		list.put(t.getPsnId(), t);
+	public static void add(Player player) {
+		list.put(player.getPsnId(), player);
 	}
 
-	public static void remove(Player t) {
-		list.remove(t.getPsnId());
+	public static void remove(Player player) {
+		list.remove(player.getPsnId());
 	}
 
 	public static Player get(String psnId) {
 		return list.get(psnId);
 	}
 	
-	public static void modify(Player player) {
-		list.put(player.getPsnId(), player);
+	public static void modify(Player oldPlayer,Player newPlayer) {
+		list.remove(oldPlayer);
+		list.put(newPlayer.getPsnId(), newPlayer);
 	}
 	
 	public static List<Player> getAll() {
