@@ -1,52 +1,31 @@
 package com.repositories;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.entities.Player;
 
 public class PlayerRepository {
 
-	private static List<Player> list = new ArrayList<>();
+	private static Map<String, Player> list = new HashMap<>();
 	
 	public static void add(Player t) {
-		if (!list.contains(t))
-			list.add(t);
+		list.put(t.getPsnId(), t);
 	}
 
 	public static void remove(Player t) {
-		if (!list.contains(t))
-			list.remove(t);
-	}
-	
-	public static void remove(int index) {
-		list.remove(index);
+		list.remove(t.getPsnId());
 	}
 
-	public static void get(int index) {
-		list.get(index);
+	public static Player get(String psnId) {
+		return list.get(psnId);
 	}
 
-	public static List<Player> getAll() {
+	public static Map<String, Player> getAll() {
 		return list;
 	}
 
-	public static void modify(Player o1, Player o2) {
-		if (list.contains(o1)) {
-			int index = 0;
-			for (Player p : list) {
-				if (p.getPsnId() == o1.getPsnId()) {
-					list.remove(index);
-					list.add(index, o2);
-					return;
-				}
-				index++;
-			}
-		}
-	}
-
-	public static void modify(int index, Player o) {
-		// TODO Auto-generated method stub
-		
+	public static void modify(String psnId, Player player) {
+		list.put(psnId, player);
 	}
 }

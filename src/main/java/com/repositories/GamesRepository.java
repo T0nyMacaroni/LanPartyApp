@@ -1,44 +1,32 @@
 package com.repositories;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.entities.Game;
 
 public class GamesRepository {
 
-	private static List<Game> list = new ArrayList<>();
+	private static Map<String, Game> list = new HashMap<>();
 	
 	public static void add(Game t) {
-		if (!list.contains(t))
-			list.add(t);
+		list.put(t.getName(), t);
 	}
 	
-	public static void remove(int index) {
-		list.remove(index);
+	public static void remove(String gameName) {
+		list.remove(gameName);
 	}
 
-	public static void remove(Game t) {
-		if (!list.contains(t))
-			list.remove(t);
+	public static Game get(String gameName) {
+		return list.get(gameName);
 	}
 
-	public static void get(int index) {
-		list.get(index);
-	}
-
-	public static List<Game> getAll() {
+	public static Map<String, Game> getAll() {
 		return list;
 	}
 
-	public static void modify(Game o1, Game o2) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public static void modify(int index, Game o) {
-		// TODO Auto-generated method stub
-		
+	public static void modify(String gameName, Game game) {
+		list.put(gameName, game);
 	}
 	
 }
