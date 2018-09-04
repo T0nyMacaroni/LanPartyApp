@@ -53,5 +53,7 @@ public class Player implements Serializable {
 		games.add(game);
 	}
 
-
+	public String toString() {
+		return String.format("%-16s - %s %s", getPsnId(), getName(), getFirstName());
+	}
 }

@@ -7,7 +7,7 @@ import com.entities.Game;
 
 public class GamesRepository implements IRepository<Game> {
 
-	private List<Game> list = new ArrayList<>();
+	public static List<Game> list = new ArrayList<>();
 	
 	@Override
 	public void add(Game t) {
@@ -34,6 +34,16 @@ public class GamesRepository implements IRepository<Game> {
 		return list;
 	}
 
-	
+	@Override
+	public void modify(Game o1, Game o2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void modify(int index, Game o) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

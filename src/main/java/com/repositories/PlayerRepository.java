@@ -7,7 +7,7 @@ import com.entities.Player;
 
 public class PlayerRepository implements IRepository<Player> {
 
-	private List<Player> list = new ArrayList<>();
+	public static List<Player> list = new ArrayList<>();
 	
 	@Override
 	public void add(Player t) {
@@ -34,6 +34,24 @@ public class PlayerRepository implements IRepository<Player> {
 		return list;
 	}
 
-	
-	
+	@Override
+	public void modify(Player o1, Player o2) {
+		if (list.contains(o1)) {
+			int index = 0;
+			for (Player p : list) {
+				if (p.getPsnId() == o1.getPsnId()) {
+					list.remove(index);
+					list.add(index, o2);
+					return;
+				}
+				index++;
+			}
+		}
+	}
+
+	@Override
+	public void modify(int index, Player o) {
+		// TODO Auto-generated method stub
+		
+	}
 }
