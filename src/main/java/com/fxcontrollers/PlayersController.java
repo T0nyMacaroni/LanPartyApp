@@ -8,13 +8,10 @@ import com.repositories.PlayerRepository;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-
-import java.util.Observable;
 
 public class PlayersController {
 	@FXML private TextField txt_playerName;
@@ -100,5 +97,13 @@ public class PlayersController {
 		GamesRepository.add(new Game("Rainbow Six Siege"));
 		
 		//TODO build games selection list
+	}
+
+	public ObservableList<Player> getData() {
+		return data;
+	}
+
+	public void setData(ObservableList<Player> data) {
+		this.data = data;
 	}
 }
