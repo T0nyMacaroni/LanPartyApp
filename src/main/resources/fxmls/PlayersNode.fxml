@@ -16,7 +16,7 @@
     	<BorderPane>
     		<top>
     			<FlowPane styleClass="centerElements">
-    				<Label>Player Details:</Label>
+    				<Label>Player Details</Label>
     			</FlowPane>
     		</top>
     		
@@ -28,9 +28,9 @@
 	    				<TextField fx:id="txt_playerName"
 	    					GridPane.columnIndex="1" GridPane.rowIndex="0"/>
 	    					
-	    				<Label text="Surname"
+	    				<Label text="Firstname"
 	    					GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-	    				<TextField fx:id="txt_playerSurName"
+	    				<TextField fx:id="txt_playerFirstname"
 	    					GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 	    					
 	    				<Label text="PSN-ID"
@@ -40,18 +40,11 @@
 	    					
 	    				<Label text="Games"
 	    					GridPane.columnIndex="0" GridPane.rowIndex="3"/>
-	    				<ComboBox fx:id="cmb_possibleGames"
+	    				<Label text="TODO!"
 	    					GridPane.columnIndex="1" GridPane.rowIndex="3"/>
     				</GridPane>
     			</FlowPane>
     		</center>
-    		
-    		<bottom>
-    			<FlowPane styleClass="centerElements">
-	    			<Button>Add Player</Button>
-	    			<Button>Modify Player</Button>
-    			</FlowPane>
-    		</bottom>
     	</BorderPane>
     </center>
     
@@ -68,4 +61,15 @@
     		</center>
     	</BorderPane>
     </right>
+    
+    <bottom>
+    	<FlowPane styleClass="centerElements">
+    		<GridPane hgap="15" vgap="5">
+    			<Button onAction="#create_player" text="Create Player"
+    				GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+	  			<Button onAction="#modify_player" text="Modify Player"
+    				GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+    		</GridPane>
+		</FlowPane>
+    </bottom>
 </BorderPane>
