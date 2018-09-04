@@ -12,7 +12,6 @@ Application for managing Lan parties for Playstation 4
 	- ...
 
 ## Bugs
-	- !!!! Creating a player within the PlayersFrame shouldn't overwrite an existing player.
 	- ...
 
 ## In progress
@@ -25,4 +24,4 @@ Application for managing Lan parties for Playstation 4
 	- !! Listview sorting logic
 	
 ## Fixed
-	- ...
+	- !!!! Creating a player within the PlayersFrame shouldn't overwrite an existing player.
