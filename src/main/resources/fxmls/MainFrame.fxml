@@ -27,6 +27,14 @@
                         <MenuItem mnemonicParsing="false" text="Exit" accelerator="Ctrl+E" onAction="#exitMenu_action" />
                     </items>
                 </Menu>
+                <!--
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Undo" accelerator="Ctrl+Z"/>
+                        <MenuItem mnemonicParsing="false" text="Redo" accelerator="Ctrl+Y"/>
+                    </items>
+                </Menu>
+                -->
                 <Menu mnemonicParsing="false" text="Help">
                     <items>
                         <MenuItem mnemonicParsing="false" text="About" accelerator="F12" onAction="#aboutMenu_action"/>
