@@ -26,6 +26,14 @@ public class PlayersController {
 	
 	@FXML private void create_player() {
 		System.out.println("Create player...");
+		Player newPlayer = new Player(
+				txt_playerName.getText(),
+				txt_playerFirstname.getText(),
+				txt_playerPSNId.getText()
+		);
+		PlayerRepository.add(newPlayer);
+		lview_allPlayers.getItems().clear();
+		lview_allPlayers.getItems().addAll(PlayerRepository.getAll());
 	}
 	
 	@FXML private void modify_player() {
@@ -36,10 +44,19 @@ public class PlayersController {
 				txt_playerFirstname.getText(),
 				txt_playerPSNId.getText()
 		);
-		PlayerRepository.modify(oldPlayer, player);
+		PlayerRepository.remove(oldPlayer);
+		PlayerRepository.modify(player);
 		lview_allPlayers.getItems().clear();
 		lview_allPlayers.getItems().addAll(PlayerRepository.getAll());
 		lview_allPlayers.getSelectionModel().select(previousSelectedPlayerIndex);
+	}
+	
+	@FXML private void remove_player() {
+		System.out.println("Remove player...");
+		if (player == null) return;
+		PlayerRepository.remove(player);
+		lview_allPlayers.getItems().clear();
+		lview_allPlayers.getItems().addAll(PlayerRepository.getAll());
 	}
 	
 	private void initPlayerListListener() {

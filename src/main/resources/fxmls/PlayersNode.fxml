@@ -69,6 +69,8 @@
     				GridPane.columnIndex="0" GridPane.rowIndex="0"/>
 	  			<Button onAction="#modify_player" text="Modify Player"
     				GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+    			<Button onAction="#remove_player" text="Remove Player"
+    				GridPane.columnIndex="2" GridPane.rowIndex="0"/>
     		</GridPane>
 		</FlowPane>
     </bottom>
