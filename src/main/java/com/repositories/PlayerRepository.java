@@ -23,8 +23,8 @@ public class PlayerRepository {
 		return list.get(psnId);
 	}
 	
-	public static void modify(String psnId, Player player) {
-		list.put(psnId, player);
+	public static void modify(Player player) {
+		list.put(player.getPsnId(), player);
 	}
 	
 	public static List<Player> getAll() {

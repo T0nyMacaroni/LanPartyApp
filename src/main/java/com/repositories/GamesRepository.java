@@ -23,8 +23,8 @@ public class GamesRepository {
 		return list.get(gameName);
 	}
 	
-	public static void modify(String gameName, Game game) {
-		list.put(gameName, game);
+	public static void modify(Game game) {
+		list.put(game.getName(), game);
 	}
 	
 	public static List<Game> getAll() {
