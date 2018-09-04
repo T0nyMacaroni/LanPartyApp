@@ -54,7 +54,7 @@ public class TeamGeneratorController {
             numberOfTeams = Integer.parseInt(txtfield_number_of_teams.getText());
 
             if(numberOfPlayers % numberOfTeams == 0){
-                //spelerslijst inladen
+                //
             } else {
                 Popup alert = new Popup(Alert.AlertType.WARNING);
                 alert.setTitle("Warning!");

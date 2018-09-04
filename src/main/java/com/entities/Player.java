@@ -54,6 +54,6 @@ public class Player implements Serializable {
 	}
 
 	public String toString() {
-		return String.format("%-16s - %s %s", getPsnId(), getName(), getFirstName());
+		return String.format("%-16s - %s %s", getPsnId(), getFirstName(), getName());
 	}
 }
