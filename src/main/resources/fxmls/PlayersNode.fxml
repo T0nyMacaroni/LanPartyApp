@@ -23,14 +23,14 @@
     		<center>
     			<FlowPane styleClass="centerElements">
     				<GridPane hgap="5" vgap="5">
-	    				<Label text="Name"
+	    				<Label text="FirstName"
 	    					GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-	    				<TextField fx:id="txt_playerName"
+	    				<TextField fx:id="txt_playerFirstName"
 	    					GridPane.columnIndex="1" GridPane.rowIndex="0"/>
 	    					
-	    				<Label text="Firstname"
+	    				<Label text="Name"
 	    					GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-	    				<TextField fx:id="txt_playerFirstname"
+	    				<TextField fx:id="txt_playerName"
 	    					GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 	    					
 	    				<Label text="PSN-ID"
