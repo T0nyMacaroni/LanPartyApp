@@ -59,7 +59,7 @@
     		<center>
 				<TableView fx:id="tv_allPlayers">
 					<columns>
-						<TableColumn></TableColumn>
+						<TableColumn text="Select" fx:id="tv_selected"></TableColumn>
 						<TableColumn prefWidth="80" text="Firstname" fx:id="tv_firstnameCol"></TableColumn>
 						<TableColumn prefWidth="80" text="Name" fx:id="tv_nameCol"/>
 						<TableColumn prefWidth="125" text="PSN-ID" fx:id="tv_psnIdCol"/>
