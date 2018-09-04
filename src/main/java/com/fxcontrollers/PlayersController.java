@@ -47,11 +47,11 @@ public class PlayersController {
 		PlayerRepository.add(newPlayer);
 		tv_allPlayers.getItems().clear();
 		tv_allPlayers.getItems().addAll(PlayerRepository.getAll());
-
 	}
 	
 	@FXML private void modify_player() {
 		System.out.println("Modify player...");
+		if(player == null) return;
 		Player oldPlayer = player;
 		player = new Player(
 				txt_playerName.getText(),
@@ -61,7 +61,7 @@ public class PlayersController {
 		PlayerRepository.modify(oldPlayer, player);
 		tv_allPlayers.getItems().clear();
 		tv_allPlayers.getItems().addAll(PlayerRepository.getAll());
-		//lview_allPlayers.getSelectionModel().select(previousSelectedPlayerIndex);
+		tv_allPlayers.getSelectionModel().select(previousSelectedPlayerIndex);
 	}
 	
 	@FXML private void remove_player() {
@@ -87,16 +87,14 @@ public class PlayersController {
 		tv_firstnameCol.setCellValueFactory(new PropertyValueFactory<Player,String>("firstName"));
 		tv_nameCol.setCellValueFactory(new PropertyValueFactory<Player,String>("name"));
 		tv_psnIdCol.setCellValueFactory(new PropertyValueFactory<Player,String>("psnId"));
-		//tv_allPlayers.setItems(data);
+		tv_allPlayers.getItems().addAll(PlayerRepository.getAll());
 	}
 	
 	private void listing_demo() {
 		System.out.println("Demo sequence initiated!");
 				
-		PlayerRepository.add(new Player("Anthony", "Stulens", "AnthonioFéro"));
-		PlayerRepository.add(new Player("Ben", "Teppers", "BennyOClock"));
-		
-		//lview_allPlayers.getItems().addAll(PlayerRepository.getAll());
+		PlayerRepository.add(new Player("Stulens", "Anthony", "AnthonioFéro"));
+		PlayerRepository.add(new Player("Teppers", "Ben", "BennyOClock"));
 		
 		GamesRepository.add(new Game("GTA V"));
 		GamesRepository.add(new Game("Rainbow Six Siege"));
