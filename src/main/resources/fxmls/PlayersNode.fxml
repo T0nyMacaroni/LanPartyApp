@@ -57,9 +57,9 @@
     		</top>
     		
     		<center>
-    			<ListView fx:id="lview_allPlayers"/>
 				<TableView fx:id="tv_allPlayers">
 					<columns>
+						<TableColumn></TableColumn>
 						<TableColumn prefWidth="80" text="Firstname" fx:id="tv_firstnameCol"></TableColumn>
 						<TableColumn prefWidth="80" text="Name" fx:id="tv_nameCol"/>
 						<TableColumn prefWidth="125" text="PSN-ID" fx:id="tv_psnIdCol"/>
