@@ -1,5 +1,5 @@
 # LanPartyApp
-[WHAT IS IT?]
+Application for managing Lan parties for Playstation 4
 
 ## TODO
 	- ...
