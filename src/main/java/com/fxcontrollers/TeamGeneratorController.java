@@ -1,14 +1,19 @@
 package com.fxcontrollers;
 
-import com.entities.Team;
-import com.uicomponents.Popup;
-import javafx.fxml.FXML;
-import javafx.scene.control.*;
-import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import com.entities.Team;
+import com.uicomponents.Popup;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 public class TeamGeneratorController {
 
@@ -29,7 +34,7 @@ public class TeamGeneratorController {
     private List<Team> Teams = new ArrayList<>();
 
     @FXML void initialize() {
-        combobox_number_of_divisions.getSelectionModel().select(0);
+    	combobox_number_of_divisions.getSelectionModel().select(0);
         checkDefaults();
     }
 
@@ -79,5 +84,13 @@ public class TeamGeneratorController {
             borderpane_number_of_divisions.setVisible(false);
 
     }
+
+	public List<Team> getTeams() {
+		return Teams;
+	}
+
+	public void setTeams(List<Team> teams) {
+		Teams = teams;
+	}
 
 }
