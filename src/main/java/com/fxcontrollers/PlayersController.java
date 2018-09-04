@@ -1,8 +1,6 @@
 package com.fxcontrollers;
 
-import com.entities.Game;
 import com.entities.Player;
-import com.repositories.GamesRepository;
 import com.repositories.PlayerRepository;
 
 import javafx.collections.FXCollections;
@@ -30,7 +28,6 @@ public class PlayersController {
 	private int previousSelectedPlayerIndex;
 	
 	@FXML void initialize() {
-		listing_demo(); //TODO DELETE ME WHEN DONE!
 		initPlayerListListener();
 	}
 	
@@ -85,18 +82,6 @@ public class PlayersController {
 		tv_nameCol.setCellValueFactory(new PropertyValueFactory<Player,String>("name"));
 		tv_psnIdCol.setCellValueFactory(new PropertyValueFactory<Player,String>("psnId"));
 		tv_allPlayers.getItems().addAll(PlayerRepository.getAll());
-	}
-	
-	private void listing_demo() {
-		System.out.println("Demo sequence initiated!");
-				
-		PlayerRepository.add(new Player("Stulens", "Anthony", "AnthonioFéro"));
-		PlayerRepository.add(new Player("Teppers", "Ben", "BennyOClock"));
-		
-		GamesRepository.add(new Game("GTA V"));
-		GamesRepository.add(new Game("Rainbow Six Siege"));
-		
-		//TODO build games selection list
 	}
 
 	public ObservableList<Player> getData() {
