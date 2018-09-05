@@ -11,6 +11,8 @@ public class Player implements Serializable {
 
 	private static final long serialVersionUID = 8658534901414231502L;
 
+	private static final int PSN_MAX_LENGTH = 16;
+
 	private transient StringProperty firstName;
 	private transient StringProperty name;
 	private transient StringProperty psnId;
@@ -25,9 +27,7 @@ public class Player implements Serializable {
 		_name = name;
 		_psnId = psnId;
 		_firstName = firstName;
-		this.name = new SimpleStringProperty(name);
-		this.firstName = new SimpleStringProperty(firstName);
-		this.psnId = new SimpleStringProperty(psnId);
+		build_player();
 		games = new ArrayList<>();
 	}
 
@@ -61,7 +61,14 @@ public class Player implements Serializable {
 		return name;
 	}
 
-	public void setPsnId(String value) {
+	public boolean isInvalidPsnId(String value) {
+		return value.contains(" ") || value.length() > PSN_MAX_LENGTH;
+	}
+	
+	public void setPsnId(String value) throws Exception {
+		if (isInvalidPsnId(value)) {
+			throw new Exception("PSN-ID limit passed");
+		}
 		psnIdProperty().set(value);
 	}
 

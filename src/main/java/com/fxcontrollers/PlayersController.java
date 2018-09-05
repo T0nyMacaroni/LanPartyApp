@@ -31,7 +31,7 @@ public class PlayersController {
 	@FXML void initialize() {
 		initPlayerListListener();
 		txt_playerPSNId.textProperty().addListener((object, oldValue, newValue) -> {
-			if (newValue.contains(" ") || newValue.length() > 16) {
+			if (player.isInvalidPsnId(newValue)) {
 				txt_playerPSNId.setText(oldValue);
 			}
 		});
