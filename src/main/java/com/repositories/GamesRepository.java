@@ -40,4 +40,8 @@ public class GamesRepository implements Serializable {
 		});
 	}
 	
+	public static void clear() {
+		list = new HashMap<>();
+	}
+	
 }
