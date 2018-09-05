@@ -40,4 +40,8 @@ public class PlayerRepository implements Serializable {
 			add(e);
 		});
 	}
+	
+	public static void clear() {
+		list = new HashMap<>();
+	}
 }
