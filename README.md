@@ -4,8 +4,6 @@ Application for managing Lan parties for Playstation 4
 ## TODO
 	- !!! Add Games property (Player, PlayerController, PlayerNode)
 	- ! Undo/Redo Option
-	- !!! Add Games property (Player, PlayerController, PlayerNode)
-	- ! Undo/Redo Option
 	- ...
 
 ## Bugs
