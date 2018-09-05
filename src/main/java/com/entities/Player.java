@@ -67,7 +67,7 @@ public class Player implements Serializable {
 	
 	public void setPsnId(String value) throws Exception {
 		if (isInvalidPsnId(value)) {
-			throw new Exception("PSN-ID limit passed");
+			throw new Exception("PSN-ID is invalid!");
 		}
 		psnIdProperty().set(value);
 	}
