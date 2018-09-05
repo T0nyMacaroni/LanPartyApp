@@ -14,8 +14,10 @@ public class GamesRepositoryTest {
 	@Before
 	public void setUp() {
 		GamesRepository.clear();
-		GamesRepository.add(new Game("GTA V"));
-		GamesRepository.add(new Game("MapleStory M"));
+		GamesRepository.createMap(Arrays.asList(
+				new Game("GTA V"),
+				new Game("MapleStory M")
+		));
 	}
 	
 	@Test
