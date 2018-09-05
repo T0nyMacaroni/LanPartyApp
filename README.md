@@ -4,7 +4,6 @@ Application for managing Lan parties for Playstation 4
 ## TODO
 	- !!! Add Games property (Player, PlayerController, PlayerNode)
 	- ! Undo/Redo Option
-	- !!!! Create Test-cases for as many objects as possible
 	- !!! Add Games property (Player, PlayerController, PlayerNode)
 	- ! Undo/Redo Option
 	- ...
@@ -14,6 +13,7 @@ Application for managing Lan parties for Playstation 4
 
 ## In progress
 	- !!!! Documentation
+	- !!!! Create Test-cases for as many objects as possible
 
 ## Finished
 	- Textbox Outlining (TeamGeneratorNode)
