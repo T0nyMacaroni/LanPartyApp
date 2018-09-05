@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.entities.Team;
-import com.uicomponents.Popup;
+import com.nodes.Popup;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;

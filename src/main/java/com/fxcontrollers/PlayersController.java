@@ -1,8 +1,8 @@
 package com.fxcontrollers;
 
 import com.entities.Player;
+import com.nodes.Popup;
 import com.repositories.PlayerRepository;
-import com.uicomponents.Popup;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

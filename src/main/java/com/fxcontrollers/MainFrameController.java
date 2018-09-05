@@ -1,6 +1,6 @@
 package com.fxcontrollers;
 
-import com.uicomponents.Popup;
+import com.nodes.Popup;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
