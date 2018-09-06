@@ -61,7 +61,7 @@ public class Player implements Serializable {
 		return name;
 	}
 
-	public boolean isInvalidPsnId(String value) {
+	public static boolean isInvalidPsnId(String value) {
 		return value.contains(" ") || value.length() > PSN_MAX_LENGTH;
 	}
 	
