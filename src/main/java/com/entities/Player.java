@@ -21,7 +21,7 @@ public class Player implements Serializable {
 	private String _name;
 	private String _psnId;
 
-	private List<String> games;
+	private List<Game> games;
 
 	public Player(String name, String firstName, String psnId) {
 		_name = name;
@@ -80,11 +80,15 @@ public class Player implements Serializable {
 		return psnId;
 	}
 
-	public List<String> getGames() {
+	public List<Game> getGames() {
 		return games;
 	}
+	
+	public void clearGames() {
+		games = new ArrayList<>();
+	}
 
-	public void addGame(String game) {
+	public void addGame(Game game) {
 		games.add(game);
 	}
 

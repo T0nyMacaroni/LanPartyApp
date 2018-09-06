@@ -1,17 +1,21 @@
 package com.fxcontrollers;
 
+import com.entities.Game;
 import com.entities.Player;
 import com.nodes.Popup;
+import com.repositories.GamesRepository;
 import com.repositories.PlayerRepository;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.GridPane;
 
 public class PlayersController {
 	@FXML private TextField txt_playerName;
@@ -21,7 +25,9 @@ public class PlayersController {
 	@FXML private TableColumn<Player,String> tv_firstnameCol;
 	@FXML private TableColumn<Player,String> tv_nameCol;
 	@FXML private TableColumn<Player,String> tv_psnIdCol;
+	@FXML private GridPane gamesGrid;
 	
+	private CheckBox[] games = new CheckBox[GamesRepository.getAll().size()];
 	private Player player;
 
 	private ObservableList<Player> data = FXCollections.observableArrayList(PlayerRepository.getAll());
@@ -31,10 +37,25 @@ public class PlayersController {
 	@FXML void initialize() {
 		initPlayerListListener();
 		txt_playerPSNId.textProperty().addListener((object, oldValue, newValue) -> {
-			if (player.isInvalidPsnId(newValue)) {
+			if (Player.isInvalidPsnId(newValue)) {
 				txt_playerPSNId.setText(oldValue);
 			}
 		});
+		initGamesGrid();
+	}
+	
+	private void initGamesGrid() {
+		int max_size = GamesRepository.getAll().size();
+		int overall_index = 0;
+		for (int i = 0; i < max_size; i++) {
+			for (int x = 0; x < 2; x++) {
+				if (!(overall_index >= max_size)) {
+					games[overall_index] = new CheckBox(GamesRepository.getAll().get(overall_index).getName());
+					gamesGrid.add(games[overall_index], i, x);
+					overall_index++;
+				}
+			}
+		}
 	}
 	
 	@FXML private void create_player() {
@@ -45,6 +66,11 @@ public class PlayersController {
 				txt_playerFirstname.getText(),
 				txt_playerPSNId.getText()
 		);
+		for (CheckBox box : games) {
+			if (box.isSelected()) {
+				newPlayer.addGame(new Game(box.getText()));
+			}
+		}
 		if (PlayerRepository.get(newPlayer.getPsnId()) == null) {
 			PlayerRepository.add(newPlayer);
 			tv_allPlayers.getItems().clear();
@@ -70,6 +96,12 @@ public class PlayersController {
 				txt_playerFirstname.getText(),
 				txt_playerPSNId.getText()
 		);
+		player.clearGames();
+		for (CheckBox box : games) {
+			if (box.isSelected()) {
+				player.addGame(new Game(box.getText()));
+			}
+		}
 		PlayerRepository.modify(oldPlayer, player);
 		tv_allPlayers.getItems().clear();
 		tv_allPlayers.getItems().addAll(PlayerRepository.getAll());
@@ -95,6 +127,7 @@ public class PlayersController {
 		previousSelectedPlayerIndex = -1;
 		player = null;
 		tv_allPlayers.getSelectionModel().clearSelection();
+		resetGamesCheckBoxes();
 	}
 	
 	@FXML private void remove_player() {
@@ -114,14 +147,26 @@ public class PlayersController {
 			txt_playerFirstname.setText(player.getFirstName());
 			txt_playerName.setText(player.getName());
 			txt_playerPSNId.setText(player.getPsnId());
-
-			//TODO turn games list into frame list.
+			resetGamesCheckBoxes();
+			player.getGames().forEach(g -> {
+				for (CheckBox box : games) {
+					if (box.getText().equalsIgnoreCase(g.getName())) {
+						box.setSelected(true);
+					}
+				}
+			});
 		});
 		
 		tv_firstnameCol.setCellValueFactory(new PropertyValueFactory<Player,String>("firstName"));
 		tv_nameCol.setCellValueFactory(new PropertyValueFactory<Player,String>("name"));
 		tv_psnIdCol.setCellValueFactory(new PropertyValueFactory<Player,String>("psnId"));
 		tv_allPlayers.getItems().addAll(PlayerRepository.getAll());
+	}
+	
+	private void resetGamesCheckBoxes() {
+		for (CheckBox box : games) {
+			box.setSelected(false);
+		}
 	}
 
 	public ObservableList<Player> getData() {
