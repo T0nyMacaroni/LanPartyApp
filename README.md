@@ -2,11 +2,15 @@
 Application for managing Lan parties for Playstation 4
 
 ## TODO
-	- !!! Add Games property (Player, PlayerController, PlayerNode)
 	- ! Undo/Redo Option
+	- <!> Create a frame to add/remove/modify games
+	- <!> Create a frame to create competitions
+	- <!> Create a frame to create tournaments
+	- !!! Create algorithm to generate teams
 	- ...
 
 ## Bugs
+	- !!! To many games could mess up the Player-frame games outlining
 	- ...
 
 ## In progress
@@ -14,10 +18,11 @@ Application for managing Lan parties for Playstation 4
 	- !!!! Create Test-cases for as many objects as possible
 
 ## Finished
-	- Textbox Outlining (TeamGeneratorNode)
+	- ! Textbox Outlining (TeamGeneratorNode)
 	- !!!! I/O Handler (Export/Import players)
 	- !! Add Listview Headers (Firstname, Name, PSN-ID)
 	- !! Listview sorting logic
+	- !!! Add Games property (Player, PlayerController, PlayerNode)
 	
 ## Fixed
 	- !!!! Creating a player within the PlayersFrame shouldn't overwrite an existing player.
