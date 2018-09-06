@@ -47,6 +47,7 @@ public class PlayersController {
 	}
 	
 	public void reset_table_focus() {
+		if (player == null) return;
 		reset_fields();
 	}
 	
