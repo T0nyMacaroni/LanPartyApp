@@ -11,7 +11,12 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.control.ListView?>
 
-<BorderPane stylesheets="/stylesheets/PlayersNode.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fxcontrollers.PlayersController" styleClass="outside">
+<BorderPane stylesheets="/stylesheets/PlayersNode.css" 
+			xmlns="http://javafx.com/javafx/8" 
+			xmlns:fx="http://javafx.com/fxml/1" 
+			fx:controller="com.fxcontrollers.PlayersController" 
+			styleClass="outside" 
+			onMouseClicked="#reset_table_focus">
     <center>
     	<BorderPane>
     		<top>

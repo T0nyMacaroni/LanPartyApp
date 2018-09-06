@@ -15,6 +15,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 
 public class PlayersController {
@@ -26,6 +27,7 @@ public class PlayersController {
 	@FXML private TableColumn<Player,String> tv_nameCol;
 	@FXML private TableColumn<Player,String> tv_psnIdCol;
 	@FXML private GridPane gamesGrid;
+	@FXML private BorderPane baseFrame;
 	
 	private CheckBox[] games = new CheckBox[GamesRepository.getAll().size()];
 	private Player player;
@@ -42,6 +44,10 @@ public class PlayersController {
 			}
 		});
 		initGamesGrid();
+	}
+	
+	public void reset_table_focus() {
+		reset_fields();
 	}
 	
 	private void initGamesGrid() {
