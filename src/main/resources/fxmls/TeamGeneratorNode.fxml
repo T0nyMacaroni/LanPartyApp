@@ -16,7 +16,7 @@
         			GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.hgrow="always"/>
                 <TextField fx:id="txtfield_number_of_players"
                 	GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.hgrow="always"/>
-                <Button text="Configure" onAction="#button_selectPlayers_action"
+                <Button text="Configure" onAction="#button_selectPlayers_action" visible="false"
                 	GridPane.columnIndex="2" GridPane.rowIndex="0" GridPane.hgrow="always" GridPane.halignment="RIGHT"/>
                 	
                 <!-- Center layer -->
@@ -24,8 +24,10 @@
                 	GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.hgrow="always"/>
                 <TextField fx:id="txtfield_number_of_teams"
                 	GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.hgrow="always"/>
-                <Label text="NULL" visible="false"
-                	GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.hgrow="always"/>
+                <Button text="Generate" onAction="#button_generate_teams"
+                        GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.hgrow="always" GridPane.halignment="RIGHT"/>
+                <Button text="Configure" onAction="#button_generate_teams"
+                        GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.hgrow="always" GridPane.halignment="RIGHT"/>
         	</GridPane>
             <BorderPane>
                 <left>
@@ -51,7 +53,7 @@
     </top>
 
     <center>
-        <BorderPane styleClass="textfield"><center><TextArea fx:id="txtarea_team_result" editable="false"></TextArea></center></BorderPane>
+        <BorderPane styleClass="textfield"><center><TextArea fx:id="txtarea_team_result" editable="false" ></TextArea></center></BorderPane>
     </center>
 
     <bottom>

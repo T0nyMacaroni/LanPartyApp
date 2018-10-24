@@ -28,7 +28,7 @@ public class Generator {
             for (int j = 0; j < teamSize; j++) {
                 rand = new Random();
                 int randomNumber = rand.nextInt(players1.size());
-                System.out.println(randomNumber);
+                //System.out.println(randomNumber);
                 team.add(players1.get(randomNumber));
                 players1.remove(randomNumber);
             }
@@ -38,10 +38,10 @@ public class Generator {
 
     public void print() {
         int teamNumber = 1;
-        for (List<String> team : teams) {
+        for (List<Player> team : teams) {
             System.out.println("Team " + teamNumber);
-            for (String member : team) {
-                System.out.print(member + " ");
+            for (Player member : team) {
+                System.out.print(member.getFirstName() + " ");
             }
             System.out.println();
             teamNumber++;
@@ -51,17 +51,14 @@ public class Generator {
     public String toString(){
         String result = "";
         int teamNumber = 1;
-        for (List<String> team : teams) {
-            result.concat("Team " + teamNumber + "\n");
-            for (String member : team) {
-                result.concat(member + " \n");
+        for (List<Player> team : teams) {
+            result = result + "Team " + teamNumber + "\n";
+            for (Player member : team) {
+                result = result + member.getFirstName() + " \n";
             }
-            result.concat("\n");
+            result = result + "\n";
             teamNumber++;
         }
-
-
-
         return result;
     }
 

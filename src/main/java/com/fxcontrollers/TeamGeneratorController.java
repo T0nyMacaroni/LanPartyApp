@@ -15,6 +15,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.text.Font;
 
 public class TeamGeneratorController {
 	
@@ -59,8 +60,15 @@ public class TeamGeneratorController {
 
             if(numberOfPlayers % numberOfTeams == 0){
                 int teamSize = numberOfPlayers /numberOfTeams;
-                Generator gen = new Generator(false,numberOfTeams,teamSize,PlayerRepository.getAll());
+                Generator gen;
+                gen = new Generator(false,numberOfTeams,teamSize,PlayerRepository.getAll());
                 gen.draw();
+                System.out.println(gen.toString());
+                //gen.print();
+
+                txtarea_team_result.setDisable(false);
+                txtarea_team_result.setText(gen.toString());
+
 
             } else {
                 Popup alert = new Popup(Alert.AlertType.WARNING);
