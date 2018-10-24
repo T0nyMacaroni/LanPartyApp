@@ -48,8 +48,73 @@ public class Generator {
         }
     }
 
+    public String toString(){
+        String result = "";
+        int teamNumber = 1;
+        for (List<String> team : teams) {
+            result.concat("Team " + teamNumber + "\n");
+            for (String member : team) {
+                result.concat(member + " \n");
+            }
+            result.concat("\n");
+            teamNumber++;
+        }
+
+
+
+        return result;
+    }
+
     public boolean isPossible() {
         return (numberOfTeams * teamSize == players.size());
+    }
+
+    public boolean isPot() {
+        return isPot;
+    }
+
+    public int getPots() {
+        return pots;
+    }
+
+    public int getNumberOfTeams() {
+        return numberOfTeams;
+    }
+
+    public int getTeamSize() {
+        return teamSize;
+    }
+
+    public List<Player> getPlayers() {
+        return players;
+    }
+
+    public List<List> getTeams() {
+        return teams;
+    }
+
+    public void setPot(boolean pot) {
+        isPot = pot;
+    }
+
+    public void setPots(int pots) {
+        this.pots = pots;
+    }
+
+    public void setNumberOfTeams(int numberOfTeams) {
+        this.numberOfTeams = numberOfTeams;
+    }
+
+    public void setTeamSize(int teamSize) {
+        this.teamSize = teamSize;
+    }
+
+    public void setPlayers(List<Player> players) {
+        this.players = players;
+    }
+
+    public void setTeams(List<List> teams) {
+        this.teams = teams;
     }
 }
 

@@ -60,7 +60,7 @@ public class TeamGeneratorController {
             if(numberOfPlayers % numberOfTeams == 0){
                 int teamSize = numberOfPlayers /numberOfTeams;
                 Generator gen = new Generator(false,numberOfTeams,teamSize,PlayerRepository.getAll());
-
+                gen.draw();
 
             } else {
                 Popup alert = new Popup(Alert.AlertType.WARNING);
