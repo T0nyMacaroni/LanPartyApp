@@ -3,9 +3,11 @@ package com.fxcontrollers;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.entities.Generator;
 import com.entities.Team;
 import com.nodes.Popup;
 
+import com.repositories.PlayerRepository;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
@@ -56,7 +58,10 @@ public class TeamGeneratorController {
             numberOfTeams = Integer.parseInt(txtfield_number_of_teams.getText());
 
             if(numberOfPlayers % numberOfTeams == 0){
-                //
+                int teamSize = numberOfPlayers /numberOfTeams;
+                Generator gen = new Generator(false,numberOfTeams,teamSize,PlayerRepository.getAll());
+
+
             } else {
                 Popup alert = new Popup(Alert.AlertType.WARNING);
                 alert.setTitle("Warning!");
