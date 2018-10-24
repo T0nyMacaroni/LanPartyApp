@@ -12,7 +12,6 @@ public class Generator {
     private List<Player> players;
     private List<List> teams = new ArrayList<List>();
 
-    // int numberOfPersons;
     public Generator(boolean isPot, int numberOfTeams, int teamSize, List<Player> players) {
         this.isPot = isPot;
         this.numberOfTeams = numberOfTeams;
@@ -21,17 +20,17 @@ public class Generator {
     }
 
     public void draw() {
-        //numberOfPersons = persons.size();
         Random rand;
-        List<String> team;
+        List<Player> team;
+        List<Player> players1 = players;
         for (int i = 0; i < numberOfTeams; i++) {
-            team = new ArrayList<String>();
+            team = new ArrayList<Player>();
             for (int j = 0; j < teamSize; j++) {
                 rand = new Random();
-                int randomNumber = rand.nextInt(players.size());
+                int randomNumber = rand.nextInt(players1.size());
                 System.out.println(randomNumber);
-                //teams.add((List) players.get(randomNumber));
-                players.remove(randomNumber);
+                team.add(players1.get(randomNumber));
+                players1.remove(randomNumber);
             }
             teams.add(team);
         }
